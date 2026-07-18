@@ -536,7 +536,7 @@
       if (menuOpen) menuToggle.click();
     }
 
-    const CHAT_API = "http://localhost:8000/chat";
+    const CHAT_API = "https://geoclub-backend.streamlit.app/?api=chat&message=";
 
     const messagesEl = document.getElementById("messages");
     const welcomeEl = document.getElementById("welcome");
@@ -678,18 +678,21 @@
       showTyping();
 
       try {
-        const resp = await fetch(CHAT_API, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: text, history: history.slice(-20) }),
-        });
-        const data = await resp.json();
+        const resp = await fetch(CHAT_API + encodeURIComponent(text));
+        const textResp = await resp.text();
+        let reply = "";
+        try {
+          const data = JSON.parse(textResp);
+          reply = data.response || data.reply || textResp;
+        } catch {
+          reply = textResp;
+        }
         removeTyping();
-        addMessage("ai", data.response || "Sorry, I couldn't process that.");
-        history.push({ role: "ai", content: data.response || "" });
+        addMessage("ai", reply || "Sorry, I couldn't process that.");
+        history.push({ role: "ai", content: reply || "" });
       } catch (e) {
         removeTyping();
-        addMessage("ai", "Connection error. Make sure the chat server is running on port 8000.");
+        addMessage("ai", "Connection error. The AI server may be waking up — please try again in a moment.");
       } finally {
         sendBtn.disabled = false;
         input.focus();
