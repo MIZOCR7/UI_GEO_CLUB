@@ -492,11 +492,21 @@
     async function callBackend(message) {
       const target = CHAT_API + encodeURIComponent(message);
 
-      setStatus("Thinking\u2026");
-      const r = await fetchWithTimeout(target, 120000);
-      const j = await r.json();
-      if (!r.ok) throw new Error(j.error || "request_failed");
-      return j.response;
+      const statusSteps = ["Waking up the AI professor...", "Searching the textbook...", "Still thinking...", "Almost there..."];
+      let step = 0;
+      const statusTimer = setInterval(() => {
+        step = Math.min(step + 1, statusSteps.length - 1);
+        setStatus(statusSteps[step]);
+      }, 15000);
+
+      try {
+        const r = await fetchWithTimeout(target, 180000);
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error || "request_failed");
+        return j.response;
+      } finally {
+        clearInterval(statusTimer);
+      }
     }
 
     /* ================================================================
@@ -636,9 +646,7 @@
         history.push({ role: "ai", content: reply || "" });
       } catch {
         removeTyping();
-        addMessage("ai", "Opening in Streamlit directly...");
-        const direct = "https://geoclub-backend.streamlit.app/?api=chat&message=" + encodeURIComponent(text);
-        setTimeout(() => { window.open(direct, "_blank"); }, 500);
+        addMessage("ai", "Could not reach the backend. Please try again in a moment.");
       } finally {
         sendBtn.disabled = false;
         inputEl.focus();

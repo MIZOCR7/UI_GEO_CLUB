@@ -7,35 +7,41 @@ export default async function handler(req, res) {
   const BACKEND = "https://geoclub-backend.streamlit.app/";
   const target = BACKEND + "?api=chat&message=" + encodeURIComponent(message);
 
-  try {
-    const response = await fetch(target, { signal: AbortSignal.timeout(120000) });
-    const html = await response.text();
+  let lastError = null;
 
-    let reply = extractReply(html);
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      const response = await fetch(target, { signal: AbortSignal.timeout(120000) });
+      const html = await response.text();
 
-    if (!reply) {
-      return res.status(502).json({ error: "Could not extract response from backend. Try again." });
+      const reply = extractReply(html);
+      if (reply) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        return res.status(200).json({ response: reply });
+      }
+
+      lastError = "empty_response";
+    } catch (error) {
+      lastError = error.message;
     }
 
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    return res.status(200).json({ response: reply });
-  } catch (error) {
-    return res.status(502).json({ error: error.message });
+    if (attempt < 4) {
+      await new Promise(r => setTimeout(r, 5000 + attempt * 3000));
+    }
   }
+
+  return res.status(502).json({ error: lastError });
 }
 
 function extractReply(html) {
   if (!html) return null;
 
-  // 1. Marker from updated backend
   const m = html.match(/<!--GRS-->([\s\S]*?)<!--GRE-->/);
   if (m) return clean(m[1]);
 
-  // 2. JSON response embedded in Streamlit HTML (from st.json)
   const jm = html.match(/\{"response"\s*:\s*"((?:[^"\\]|\\.)*?)"\s*\}/);
   if (jm) return clean(jm[1]);
 
-  // 3. Any JSON block with "response" field
   const blocks = html.match(/\{[^{}]{30,}\}/g) || [];
   for (const block of blocks) {
     try {
@@ -45,7 +51,6 @@ function extractReply(html) {
     } catch {}
   }
 
-  // 4. Text inside Streamlit's stMarkdown div
   const tdm = html.match(/data-testid="stMarkdown"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i);
   if (tdm) {
     const txt = tdm[1].replace(/<[^>]+>/g, "").trim();
