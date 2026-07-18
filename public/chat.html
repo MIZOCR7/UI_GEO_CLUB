@@ -636,7 +636,9 @@
         history.push({ role: "ai", content: reply || "" });
       } catch {
         removeTyping();
-        addMessage("ai", "Could not reach the backend. Please try again in a moment.");
+        addMessage("ai", "Opening in Streamlit directly...");
+        const direct = "https://geoclub-backend.streamlit.app/?api=chat&message=" + encodeURIComponent(text);
+        setTimeout(() => { window.open(direct, "_blank"); }, 500);
       } finally {
         sendBtn.disabled = false;
         inputEl.focus();
