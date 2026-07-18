@@ -1,1 +1,10 @@
 node_modules/
+dist/
+.vite/
+*.d.ts
+*.d.ts.map
+*.tsbuildinfo
+.env
+.env.local
+.DS_Store
+Thumbs.db

@@ -1,0 +1,19 @@
+export default async function handler(req, res) {
+  const message = req.query.message;
+  if (!message) {
+    return res.status(400).json({ error: "Message parameter is required" });
+  }
+
+  const BACKEND = "https://geoclub-backend.streamlit.app/";
+  const target = BACKEND + "?api=chat&message=" + encodeURIComponent(message);
+
+  try {
+    const response = await fetch(target, { signal: AbortSignal.timeout(120000) });
+    const text = await response.text();
+
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    return res.status(200).json({ response: text });
+  } catch (error) {
+    return res.status(502).json({ error: error.message });
+  }
+}

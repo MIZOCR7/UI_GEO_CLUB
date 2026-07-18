@@ -679,20 +679,23 @@
 
       try {
         const resp = await fetch(CHAT_API + encodeURIComponent(text));
-        const textResp = await resp.text();
+        const html = await resp.text();
         let reply = "";
-        try {
-          const data = JSON.parse(textResp);
-          reply = data.response || data.reply || textResp;
-        } catch {
-          reply = textResp;
+        const jsonMatch = html.match(/\{(?:"[^"]*"\s*:\s*"[^"]*"(?:\s*,\s*"[^"]*"\s*:\s*"[^"]*")*)\}/);
+        if (jsonMatch) {
+          try { const data = JSON.parse(jsonMatch[0]); reply = data.response || data.reply || ""; }
+          catch {}
+        }
+        if (!reply) {
+          const textMatch = html.match(/>([^<]+)</);
+          if (textMatch) reply = textMatch[1].trim();
         }
         removeTyping();
         addMessage("ai", reply || "Sorry, I couldn't process that.");
         history.push({ role: "ai", content: reply || "" });
       } catch (e) {
         removeTyping();
-        addMessage("ai", "Connection error. The AI server may be waking up — please try again in a moment.");
+        addMessage("ai", "Server error. Please check that the backend is deployed and try again.");
       } finally {
         sendBtn.disabled = false;
         input.focus();
