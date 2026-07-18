@@ -501,53 +501,23 @@
 
     /* ================================================================
        RESPONSE PARSER
-       Handles: pure JSON, JSON embedded in HTML, Streamlit divs, <p> tags, plain text
+       The Vercel proxy now returns clean AI text (no HTML wrapping).
+       This is just a safety net for edge cases.
     ================================================================ */
     function extractReply(raw) {
       if (!raw || !raw.trim()) return null;
 
-      // 1. Pure JSON
+      // Already clean text from Vercel proxy — return as-is
+      if (!raw.startsWith("{") && !raw.startsWith("<")) return raw.trim();
+
+      // Fallback: try to parse as JSON
       try {
         const d = JSON.parse(raw);
-        return d.response || d.reply || d.answer || d.message || d.text || null;
+        return d.response || d.reply || d.answer || d.message || d.text || raw.trim();
       } catch {}
 
-      // 2. JSON embedded inside HTML
-      const chunks = raw.match(/\{[^{}]{5,}\}/g) || [];
-      for (const c of chunks) {
-        try {
-          const d = JSON.parse(c);
-          const v = d.response || d.reply || d.answer || d.message || d.text;
-          if (v && typeof v === "string" && v.trim().length > 2) return v.trim();
-        } catch {}
-      }
-
-      // 3. Streamlit-specific rendered containers
-      const stPatterns = [
-        /data-testid="stText"[^>]*>([\s\S]*?)<\/div>/i,
-        /class="stMarkdown[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
-        /class="element-container[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
-      ];
-      for (const pat of stPatterns) {
-        const m = raw.match(pat);
-        if (m) {
-          const txt = m[1].replace(/<[^>]+>/g, "").trim();
-          if (txt.length > 5) return txt;
-        }
-      }
-
-      // 4. Any <p> tag with real content
-      for (const m of raw.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)) {
-        const txt = m[1].replace(/<[^>]+>/g, "").trim();
-        if (txt.length > 10) return txt;
-      }
-
-      // 5. Strip all HTML, return first meaningful sentence
-      const plain    = raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-      const sentence = plain.split(/[.\n]/).find(s => s.trim().length > 20);
-      if (sentence) return sentence.trim();
-
-      return null;
+      // Last resort: strip any HTML tags
+      return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
     }
 
     /* ================================================================

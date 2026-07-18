@@ -9,10 +9,13 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(target, { signal: AbortSignal.timeout(120000) });
-    const text = await response.text();
+    const html = await response.text();
+
+    const match = html.match(/<!--GRS-->([\s\S]*?)<!--GRE-->/);
+    const reply = match ? match[1].trim() : "Could not extract response from backend.";
 
     res.setHeader("Access-Control-Allow-Origin", "*");
-    return res.status(200).json({ response: text });
+    return res.status(200).json({ response: reply });
   } catch (error) {
     return res.status(502).json({ error: error.message });
   }
