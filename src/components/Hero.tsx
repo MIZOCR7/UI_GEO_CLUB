@@ -72,7 +72,7 @@ export default function Hero() {
   }, [tick]);
 
   return (
-    <main className="relative w-full overflow-hidden min-h-screen md:min-h-[800px] md:h-screen bg-[#E4E4E4]">
+    <main className="relative w-full overflow-hidden min-h-screen md:min-h-[800px] md:h-screen bg-[#EAD8C3]">
       {/* Big text behind image */}
       <div
         className="creator-text-animate absolute bottom-[-30px] md:bottom-[-40px] left-0 right-0 z-[2] pointer-events-none text-center"
@@ -83,7 +83,7 @@ export default function Hero() {
         }}
       >
         <h2
-          className="font-medium text-[#F4F1E8] leading-[80%] tracking-[-0.04em] whitespace-nowrap select-none"
+          className="font-medium text-[#F3E5D8] leading-[80%] tracking-[-0.04em] whitespace-nowrap select-none"
           style={{ fontSize: "clamp(180px, 28vw, 560px)" }}
         >
           Geology
@@ -94,7 +94,7 @@ export default function Hero() {
       <div
         className="hero-image-animate absolute top-[30vh] md:top-0 left-0 right-0 bottom-0 z-[5] bg-cover bg-no-repeat"
         style={{
-          backgroundImage: "url('https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560')",
+          backgroundImage: "url('/hero.png')",
           backgroundPosition: "60% center",
           animation: "heroImageIn 1.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards",
           animationDelay: "1s",
@@ -110,7 +110,7 @@ export default function Hero() {
         ref={imgRef}
         className="absolute top-[30vh] md:top-0 left-0 right-0 bottom-0 z-[7] pointer-events-none bg-cover bg-no-repeat"
         style={{
-          backgroundImage: "url('https://soft-zoom-63098134.figma.site/_assets/v11/6be2165e31648955b4e071f4cf2a50bc572b9bfd.png?w=1536')",
+          backgroundImage: "url('/hero-reveal.png')",
           backgroundPosition: "60% center",
         }}
       />
@@ -118,7 +118,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-[8] flex flex-col justify-start items-start w-full max-w-[1600px] mx-auto px-4 pt-[110px] pb-6 md:absolute md:inset-0 md:justify-between md:px-10 md:py-[160px] md:pb-[100px] pointer-events-none">
         <div className="flex flex-col items-start gap-[30px] w-full pointer-events-auto">
-          <h1 className="text-[22px] md:text-[28px] font-medium leading-[120%] tracking-[-0.02em] text-[#111111] max-w-[447px]">
+          <h1 className="text-[22px] md:text-[28px] font-medium leading-[120%] tracking-[-0.02em] text-[#2B1B10] max-w-[447px]">
             <WordReveal text="Explore the wonders of Geology — rocks, minerals, fossils & earth science." />
           </h1>
           <CTAButton />

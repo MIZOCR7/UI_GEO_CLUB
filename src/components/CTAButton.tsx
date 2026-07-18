@@ -14,10 +14,10 @@ export default memo(function CTAButton() {
       <span
         className="absolute top-[5px] bottom-[5px] left-2 rounded-full bg-white z-0 cta-btn-bg"
       />
-      <span className="relative z-10 text-[#111111] font-medium text-[16px] md:text-[18px] px-8 md:px-10 py-3 md:py-4 whitespace-nowrap">
+      <span className="relative z-10 text-[#2B1B10] font-medium text-[16px] md:text-[18px] px-8 md:px-10 py-3 md:py-4 whitespace-nowrap">
         Chat with AI Geologist
       </span>
-      <span className="relative z-10 flex items-center justify-center w-12 h-12 md:w-[54px] md:h-[54px] rounded-full bg-[#75C5DE] shrink-0 cta-btn-circle">
+      <span className="relative z-10 flex items-center justify-center w-12 h-12 md:w-[54px] md:h-[54px] rounded-full bg-[#C29B6D] shrink-0 cta-btn-circle">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
           <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>

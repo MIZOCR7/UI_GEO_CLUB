@@ -12,8 +12,8 @@
 
     html, body {
       margin: 0; padding: 0;
-      background: #E4E4E4;
-      color: #111111;
+      background: #EAD8C3;
+      color: #2B1B10;
       overflow: hidden;
       width: 100%; height: 100%;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -62,7 +62,7 @@
     }
     .burger-btn span {
       display: block; width: 24px; height: 2px;
-      background: #111111; transition: all 0.3s ease;
+      background: #2B1B10; transition: all 0.3s ease;
     }
     .burger-btn:hover span:first-child { width: 16px; }
     .burger-btn:hover span:last-child  { width: 16px; }
@@ -124,8 +124,8 @@
       display: flex; align-items: center; justify-content: center;
       overflow: hidden;
     }
-    .message.user .avatar { background: #75C5DE; }
-    .message.ai .avatar { background: #B3DDEB; }
+    .message.user .avatar { background: #C29B6D; }
+    .message.ai .avatar { background: #EAD8C3; }
     .message .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .message .bubble {
@@ -136,13 +136,13 @@
       word-break: break-word;
     }
     .message.user .bubble {
-      background: #111111;
+      background: #2B1B10;
       color: #fff;
       border-bottom-right-radius: 4px;
     }
     .message.ai .bubble {
       background: #fff;
-      color: #111111;
+      color: #2B1B10;
       border-bottom-left-radius: 4px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
@@ -152,7 +152,7 @@
     }
     .typing .dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: #9A9A9A;
+      background: #8B7D72;
       animation: dotPulse 1.2s infinite ease-in-out;
     }
     .typing .dot:nth-child(2) { animation-delay: 0.2s; }
@@ -166,17 +166,17 @@
     }
     .welcome .avatar-circle {
       width: 80px; height: 80px; border-radius: 50%;
-      background: #B3DDEB;
+      background: #EAD8C3;
       display: flex; align-items: center; justify-content: center;
       overflow: hidden; margin: 0 auto 16px;
     }
     .welcome .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
     .welcome h1 {
-      font-size: 22px; font-weight: 600; color: #111111;
+      font-size: 22px; font-weight: 600; color: #2B1B10;
       margin-bottom: 8px; letter-spacing: -0.02em;
     }
     .welcome p {
-      font-size: 14px; color: #6B6B6B; max-width: 400px;
+      font-size: 14px; color: #5C4E43; max-width: 400px;
       margin: 0 auto; line-height: 1.5;
     }
 
@@ -204,10 +204,10 @@
       font-family: 'Inter', sans-serif;
       font-size: 15px;
       font-weight: 400;
-      color: #111111;
+      color: #2B1B10;
       padding: 14px 0;
     }
-    .input-wrapper input::placeholder { color: #9A9A9A; }
+    .input-wrapper input::placeholder { color: #8B7D72; }
     @media (min-width: 768px) { .input-wrapper input { font-size: 16px; } }
 
     .send-btn {
@@ -217,7 +217,7 @@
       gap: 8px;
       padding: 10px 20px 10px 18px;
       border: none; border-radius: 9999px;
-      background: #75C5DE;
+      background: #C29B6D;
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
@@ -225,7 +225,7 @@
       cursor: pointer;
       transition: background 0.2s ease, transform 0.2s ease;
     }
-    .send-btn:hover { background: #5fb8d4; }
+    .send-btn:hover { background: #A88454; }
     .send-btn:active { transform: scale(0.96); }
     .send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .send-btn svg {
@@ -239,12 +239,12 @@
       transform: translateX(-50%);
       z-index: 12;
       font-size: 13px;
-      color: #9A9A9A;
+      color: #8B7D72;
       text-decoration: none;
       font-family: 'Inter', sans-serif;
       transition: color 0.2s ease;
     }
-    .back-home-link:hover { color: #111111; }
+    .back-home-link:hover { color: #2B1B10; }
 
     @media (max-width: 480px) {
       .chat-container { padding: 80px 16px 90px; }

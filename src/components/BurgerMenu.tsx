@@ -19,18 +19,18 @@ export default memo(function BurgerMenu({ open, onToggle }: BurgerMenuProps) {
         <button
           onClick={handleClick}
           className={`burger-btn w-[59px] h-[59px] rounded-full border-none cursor-pointer flex flex-col gap-[4px] items-center justify-center transition-colors duration-300 ${
-            open ? "bg-[#0B0B0B]" : "bg-[#F4F1E8]"
+            open ? "bg-[#1C110A]" : "bg-[#F3E5D8]"
           }`}
           aria-label={open ? "Close menu" : "Open menu"}
         >
           <span
             className={`block w-6 h-[2px] transition-all duration-300 ${
-              open ? "bg-[#F4F1E8] rotate-45 translate-y-[3px]" : "bg-[#111111]"
+              open ? "bg-[#F3E5D8] rotate-45 translate-y-[3px]" : "bg-[#2B1B10]"
             }`}
           />
           <span
             className={`block w-6 h-[2px] transition-all duration-300 ${
-              open ? "bg-[#F4F1E8] -rotate-45 translate-y-[-3px]" : "bg-[#111111]"
+              open ? "bg-[#F3E5D8] -rotate-45 translate-y-[-3px]" : "bg-[#2B1B10]"
             }`}
           />
         </button>

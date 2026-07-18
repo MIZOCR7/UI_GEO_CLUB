@@ -15,7 +15,7 @@ export default memo(function Splash() {
             className="h-full"
             style={{
               width: "20%",
-              background: "#75C5DE",
+              background: "#C29B6D",
               animation: `splashTop 1s cubic-bezier(0.96,-0.02,0.38,1.01) forwards`,
               animationDelay: `${i * 0.05}s`,
             }}
@@ -29,7 +29,7 @@ export default memo(function Splash() {
             className="h-full"
             style={{
               width: "20%",
-              background: "#75C5DE",
+              background: "#C29B6D",
               animation: `splashBottom 1s cubic-bezier(0.96,-0.02,0.38,1.01) forwards`,
               animationDelay: `${i * 0.05}s`,
             }}

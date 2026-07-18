@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: "#F4F1E8",
-        accent: "#75C5DE",
-        dark: "#111111",
-        muted: "#9A9590",
-        bg: "#E4E4E4",
+        cream: "#F3E5D8",
+        accent: "#C29B6D",
+        dark: "#2B1B10",
+        muted: "#8B7D72",
+        bg: "#EAD8C3",
       },
       fontFamily: {
         inter: ["Inter", "system-ui", "sans-serif"],
