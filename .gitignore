@@ -28,6 +28,8 @@ __pycache__/
 
 # TypeScript
 *.tsbuildinfo
+*.d.ts
+*.d.ts.map
 
 # Generated
 .vite/
