@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  margin: 0; padding: 0;
+  background: #E4E4E4;
+  color: #F4F1E8;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ===== SPLASH ===== */
+@keyframes splashTop { from { transform: translateY(0%); } to { transform: translateY(-100%); } }
+@keyframes splashBottom { from { transform: translateY(0%); } to { transform: translateY(100%); } }
+@keyframes splashHide { to { opacity: 0; visibility: hidden; } }
+
+/* ===== HERO IMAGE ENTRANCE ===== */
+@keyframes heroImageIn {
+  from { opacity: 0; transform: scale(1.5) rotate(3deg); }
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ===== WORD REVEAL ===== */
+@keyframes wordReveal {
+  from { opacity: 0; transform: translateY(10px); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* ===== CTA ENTRANCE ===== */
+@keyframes slideUpScale {
+  from { opacity: 0; transform: translateY(60px) scale(0.4); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ===== CREATOR TEXT ===== */
+@keyframes creatorSlideUp { from { transform: translateY(330px); } to { transform: translateY(0); } }
+
+/* ===== CTA BUTTON ===== */
+.cta-btn-bg {
+  transition: width 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  width: calc(100% - 8px - 8px - 48px - 12px);
+}
+@media (min-width: 768px) {
+  .cta-btn-bg { width: calc(100% - 8px - 8px - 54px - 12px); }
+}
+.group:hover .cta-btn-bg { width: calc(100% - 16px); }
+
+.cta-btn-circle {
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.group:hover .cta-btn-circle { transform: translateX(-7px); }
+
+/* ===== MENU CTA ===== */
+.menu-cta-btn .menu-cta-bg {
+  transition: width 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.menu-cta-btn:hover .menu-cta-bg { width: calc(100% - 12px) !important; }
+.menu-cta-btn:hover .menu-cta-circle { transform: translateX(-4px) !important; }
+.menu-cta-circle {
+  transition: transform 0.3s ease;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .splash { animation: splashHide 0.01s linear forwards !important; }
+  .hero-image-animate, .word-reveal, .cta-animate, .creator-text-animate {
+    animation: none !important; opacity: 1 !important;
+    transform: none !important; filter: none !important;
+  }
+}
