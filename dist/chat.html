@@ -20,6 +20,16 @@
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      cursor: url('/cursors/01 Normal Select.ani'), auto;
+    }
+    a, button, .burger-btn, .send-btn, .menu-cta-btn {
+      cursor: url('/cursors/15 Link Select.ani'), pointer;
+    }
+    input, textarea {
+      cursor: url('/cursors/06 Text Select.ani'), text;
+    }
+    button:disabled, .send-btn:disabled {
+      cursor: url('/cursors/08 Unavailable.ani'), not-allowed;
     }
 
     .bg-grid {

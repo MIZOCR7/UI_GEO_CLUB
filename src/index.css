@@ -11,6 +11,35 @@ html, body, #root {
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: url('/cursors/01 Normal Select.ani'), auto;
+}
+
+a, button, input[type="submit"], [role="button"], .cursor-pointer {
+  cursor: url('/cursors/15 Link Select.ani'), pointer;
+}
+
+input, textarea, [contenteditable] {
+  cursor: url('/cursors/06 Text Select.ani'), text;
+}
+
+[disabled], .cursor-not-allowed {
+  cursor: url('/cursors/08 Unavailable.ani'), not-allowed;
+}
+
+.cursor-move {
+  cursor: url('/cursors/13 Move.ani'), move;
+}
+
+.cursor-wait, .loading {
+  cursor: url('/cursors/04 Busy.ani'), wait;
+}
+
+.cursor-crosshair {
+  cursor: url('/cursors/05 Precision Select.ani'), crosshair;
+}
+
+.cursor-help {
+  cursor: url('/cursors/02 Help Select.ani'), help;
 }
 
 /* ===== SPLASH ===== */
