@@ -1,10 +1,12 @@
 import { memo } from "react";
 
-export default memo(function CTAButton() {
+interface Props { onChat: () => void }
+
+export default memo(function CTAButton({ onChat }: Props) {
   return (
-    <a
-      href="/chat.html"
-      className="relative overflow-hidden inline-flex items-center border-none bg-none cursor-pointer rounded-full p-2 gap-3 group cta-animate no-underline"
+    <button
+      onClick={onChat}
+      className="relative overflow-hidden inline-flex items-center border-none bg-none cursor-pointer rounded-full p-2 gap-3 group cta-animate"
       style={{
         opacity: 0,
         animation: "slideUpScale 0.8s cubic-bezier(0.25,0.46,0.45,0.94) forwards",
@@ -22,6 +24,6 @@ export default memo(function CTAButton() {
           <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </span>
-    </a>
+    </button>
   );
 });

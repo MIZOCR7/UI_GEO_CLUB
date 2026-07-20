@@ -3,9 +3,10 @@ import { memo } from "react";
 interface MenuPanelProps {
   open: boolean;
   onClose: () => void;
+  onChat: () => void;
 }
 
-export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
+export default memo(function MenuPanel({ open, onClose, onChat }: MenuPanelProps) {
   return (
     <div
       className={`fixed z-[9] left-2 right-2 md:left-auto md:right-[7px] md:w-[420px] rounded-[20px] flex flex-col justify-between transition-all duration-500 px-8 py-[90px] md:px-[60px] md:py-[60px] ${
@@ -37,13 +38,12 @@ export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
         >
           Ziad
         </a>
-        <a
-          href="/chat.html"
-          onClick={onClose}
-          className="text-[36px] md:text-[42px] font-medium text-[#F3E5D8] no-underline leading-[130%] hover:opacity-70 transition-opacity duration-300"
+        <button
+          onClick={() => { onClose(); onChat(); }}
+          className="text-[36px] md:text-[42px] font-medium text-[#F3E5D8] no-underline leading-[130%] hover:opacity-70 transition-opacity duration-300 bg-none border-none cursor-pointer text-left"
         >
           AI
-        </a>
+        </button>
       </nav>
 
       <div className="flex flex-col gap-5 mt-8">
@@ -84,10 +84,9 @@ export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
       </div>
 
       <div className="mt-8">
-        <a
-          href="/chat.html"
-          onClick={onClose}
-          className="menu-cta-btn relative overflow-hidden flex items-center border-none bg-none cursor-pointer rounded-full p-[6px] gap-2 no-underline"
+        <button
+          onClick={() => { onClose(); onChat(); }}
+          className="menu-cta-btn relative overflow-hidden flex items-center border-none bg-none cursor-pointer rounded-full p-[6px] gap-2"
         >
           <span
             className="menu-cta-bg absolute top-[5px] bottom-[5px] left-2 rounded-full bg-white z-0 transition-all duration-400"
@@ -106,7 +105,7 @@ export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
               <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
-        </a>
+        </button>
       </div>
     </div>
   );
