@@ -16,21 +16,45 @@ export default function Chat({ onBack }: { onBack: () => void }) {
   }, [messages, loading]);
 
   const askGeologyProfessor = async (userQuestion: string): Promise<string> => {
-    const encodedMessage = encodeURIComponent(userQuestion);
-    const backendUrl = `/api/chat?message=${encodedMessage}`;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 180000);
 
-    const response = await fetch(backendUrl, {
-      method: "GET",
-      headers: { Accept: "application/json" },
-      signal: AbortSignal.timeout(180000),
-    });
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userQuestion, history: [] }),
+        signal: controller.signal,
+      });
 
-    if (!response.ok) {
-      throw new Error(`Server error: ${response.status}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || data.response || `Server error: ${response.status}`);
+      }
+
+      return data.response || data.reply || data.message || data.answer || "";
+    } catch (postErr) {
+      if ((postErr as Error).name === "AbortError") {
+        throw postErr;
+      }
+
+      const encodedMessage = encodeURIComponent(userQuestion);
+      const response = await fetch(`/api/chat?message=${encodedMessage}`, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(180000),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.response || data.reply || data.message || data.answer || "";
+    } finally {
+      clearTimeout(timeout);
     }
-
-    const data = await response.json();
-    return data.response;
   };
 
   const sendMessage = async () => {
