@@ -1,4 +1,5 @@
 {
+  "name": "geo-club-ui",
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
