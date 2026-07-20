@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geology Club AI â€” STEM 6th October</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2375C5DE'/%3E%3Ctext x='50' y='68' font-family='Inter' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" />
+  <title>Geology Club AI GÇö STEM 6th October</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C29B6D'/%3E%3Ctext x='50' y='68' font-family='Inter' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
@@ -13,8 +13,8 @@
 
     html, body {
       margin: 0; padding: 0;
-      background: #E4E4E4;
-      color: #111111;
+      background: #EAD8C3;
+      color: #2B1B10;
       overflow: hidden;
       width: 100%; height: 100%;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -58,12 +58,12 @@
       border: none; cursor: pointer;
       display: flex; flex-direction: column; gap: 4px;
       align-items: center; justify-content: center;
-      background: #F4F1E8; text-decoration: none;
+      background: #F3E5D8; text-decoration: none;
       transition: background 0.3s ease;
     }
     .burger-btn span {
       display: block; width: 24px; height: 2px;
-      background: #111111; transition: all 0.3s ease;
+      background: #2B1B10; transition: all 0.3s ease;
     }
     .burger-btn:hover span:first-child { width: 16px; }
     .burger-btn:hover span:last-child  { width: 16px; }
@@ -75,7 +75,7 @@
       z-index: 2; pointer-events: none;
       text-align: center;
       font-weight: 500;
-      color: #F4F1E8;
+      color: #F3E5D8;
       line-height: 80%;
       letter-spacing: -0.04em;
       white-space: nowrap;
@@ -124,8 +124,8 @@
       display: flex; align-items: center; justify-content: center;
       overflow: hidden; margin-top: 4px;
     }
-    .message.user .avatar { background: #75C5DE; }
-    .message.ai .avatar { background: #B3DDEB; }
+    .message.user .avatar { background: #C29B6D; }
+    .message.ai .avatar { background: #EAD8C3; }
     .message .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .message .bubble {
@@ -136,7 +136,7 @@
       word-break: break-word;
     }
     .message.user .bubble {
-      background: #111111;
+      background: #2B1B10;
       color: #fff;
       border-bottom-right-radius: 4px;
       font-weight: 450;
@@ -144,7 +144,7 @@
     }
     .message.ai .bubble {
       background: #fff;
-      color: #1a1a1a;
+      color: #2B1B10;
       border-bottom-left-radius: 4px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -159,7 +159,7 @@
     }
     .typing .dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: #9A9A9A;
+      background: #8B7D72;
       animation: dotPulse 1.2s infinite ease-in-out;
     }
     .typing .dot:nth-child(2) { animation-delay: 0.2s; }
@@ -172,17 +172,17 @@
     }
     .welcome .avatar-circle {
       width: 80px; height: 80px; border-radius: 50%;
-      background: #B3DDEB;
+      background: #EAD8C3;
       display: flex; align-items: center; justify-content: center;
       overflow: hidden; margin: 0 auto 16px;
     }
     .welcome .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
     .welcome h1 {
-      font-size: 22px; font-weight: 600; color: #111111;
+      font-size: 22px; font-weight: 600; color: #2B1B10;
       margin-bottom: 8px; letter-spacing: -0.02em;
     }
     .welcome p {
-      font-size: 14px; color: #6B6B6B; max-width: 400px;
+      font-size: 14px; color: #5C4E43; max-width: 400px;
       margin: 0 auto; line-height: 1.5;
     }
 
@@ -209,10 +209,10 @@
       font-family: 'Inter', sans-serif;
       font-size: 15px;
       font-weight: 400;
-      color: #111111;
+      color: #2B1B10;
       padding: 14px 0;
     }
-    .input-wrapper input::placeholder { color: #9A9A9A; }
+    .input-wrapper input::placeholder { color: #8B7D72; }
     @media (min-width: 768px) { .input-wrapper input { font-size: 16px; } }
 
     .send-btn {
@@ -222,7 +222,7 @@
       gap: 8px;
       padding: 10px 20px 10px 18px;
       border: none; border-radius: 9999px;
-      background: #75C5DE;
+      background: #C29B6D;
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
@@ -230,7 +230,7 @@
       cursor: pointer;
       transition: background 0.2s ease, transform 0.2s ease;
     }
-    .send-btn:hover { background: #5fb8d4; }
+    .send-btn:hover { background: #A88454; }
     .send-btn:active { transform: scale(0.96); }
     .send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .send-btn svg { width: 16px; height: 16px; display: block; }
@@ -246,7 +246,7 @@
       justify-content: space-between;
       transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
       padding: 90px 32px 60px;
-      background: rgba(17,17,17,0.95);
+      background: rgba(28,17,10,0.95);
       backdrop-filter: blur(26px);
       -webkit-backdrop-filter: blur(26px);
       top: -600px;
@@ -269,7 +269,7 @@
     .menu-panel nav a {
       font-size: 36px;
       font-weight: 500;
-      color: #F4F1E8;
+      color: #F3E5D8;
       text-decoration: none;
       line-height: 130%;
       transition: opacity 0.3s ease;
@@ -287,11 +287,11 @@
     }
     .menu-panel .menu-footer .menu-email {
       font-size: 18px;
-      color: #9A9590;
+      color: #8B7D72;
       text-decoration: none;
       transition: color 0.3s ease;
     }
-    .menu-panel .menu-footer .menu-email:hover { color: #F4F1E8; }
+    .menu-panel .menu-footer .menu-email:hover { color: #F3E5D8; }
     @media (min-width: 768px) {
       .menu-panel .menu-footer .menu-email { font-size: 20px; }
     }
@@ -301,12 +301,12 @@
     }
     .menu-panel .menu-footer .menu-socials a {
       font-size: 14px;
-      color: #9A9590;
+      color: #8B7D72;
       text-decoration: underline;
       text-underline-offset: 2px;
       transition: color 0.3s ease;
     }
-    .menu-panel .menu-footer .menu-socials a:hover { color: #F4F1E8; }
+    .menu-panel .menu-footer .menu-socials a:hover { color: #F3E5D8; }
 
     .menu-panel .menu-cta-wrap { margin-top: 32px; }
 
@@ -316,12 +316,12 @@
       transform: translateX(-50%);
       z-index: 12;
       font-size: 13px;
-      color: #9A9A9A;
+      color: #8B7D72;
       text-decoration: none;
       font-family: 'Inter', sans-serif;
       transition: color 0.2s ease;
     }
-    .back-home-link:hover { color: #111111; }
+    .back-home-link:hover { color: #2B1B10; }
 
     @media (max-width: 480px) {
       .chat-container { padding: 80px 16px 90px; }
@@ -337,7 +337,7 @@
     .md-h3 {
       font-size: 17px;
       font-weight: 700;
-      color: #111111;
+      color: #2B1B10;
       margin: 18px 0 8px;
       letter-spacing: -0.01em;
       font-family: 'Inter', sans-serif;
@@ -347,35 +347,35 @@
     .md-h2 {
       font-size: 20px;
       font-weight: 700;
-      color: #0d0d0d;
+      color: #1C110A;
       margin: 22px 0 10px;
       letter-spacing: -0.02em;
       padding-bottom: 6px;
-      border-bottom: 2px solid #75C5DE;
+      border-bottom: 2px solid #C29B6D;
       font-family: 'Inter', sans-serif;
     }
     .md-h2:first-child { margin-top: 0; }
 
     .md-strong {
       font-weight: 700;
-      color: #111111;
+      color: #2B1B10;
       font-family: 'Source Serif 4', serif;
     }
 
     .md-em {
       font-style: italic;
-      color: #555;
+      color: #5C4E43;
     }
 
     .md-highlight {
-      color: #0f7a9e;
+      color: #543B26;
       font-weight: 600;
     }
 
     .md-page {
       display: inline-block;
-      background: #E8F4F9;
-      color: #0f7a9e;
+      background: #F3E5D8;
+      color: #543B26;
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
       font-weight: 500;
@@ -402,7 +402,7 @@
       top: 9px;
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: #75C5DE;
+      background: #C29B6D;
     }
 
     .md-ol {
@@ -415,7 +415,7 @@
       line-height: 1.55;
     }
     .md-ol li::marker {
-      color: #75C5DE;
+      color: #C29B6D;
       font-weight: 600;
     }
 
@@ -423,7 +423,7 @@
       margin: 16px 0;
       border: none;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(117,197,222,0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(194,155,109,0.3), transparent);
     }
 
     .md-p {
@@ -434,7 +434,7 @@
     .md-p:first-child::first-letter {
       font-size: 1.45em;
       font-weight: 700;
-      color: #75C5DE;
+      color: #C29B6D;
       font-family: 'Source Serif 4', serif;
       margin-right: 2px;
       float: left;
@@ -487,11 +487,11 @@
     <div class="messages-area" id="messages">
       <div class="welcome" id="welcome">
         <div class="avatar-circle">
-          <img src="https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560" alt="" />
+          <img src="/hero.png" alt="" />
         </div>
         <h1>Ziad Emad Ahmed</h1>
-        <p>Senior 27 AI Engineer â€” <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" style="color:#75C5DE;text-decoration:none;font-weight:500;">LinkedIn &rarr;</a></p>
-        <p style="margin-top:8px;font-size:13px;color:#9A9A9A;">Ask me anything about geology, AI, or engineering!</p>
+        <p>Senior 27 AI Engineer GÇö <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" style="color:#C29B6D;text-decoration:none;font-weight:500;">LinkedIn &rarr;</a></p>
+        <p style="margin-top:8px;font-size:13px;color:#8B7D72;">Ask me anything about geology, AI, or engineering!</p>
       </div>
     </div>
 
@@ -518,16 +518,16 @@
       menuToggle.classList.toggle("active", menuOpen);
       menuToggle.setAttribute("aria-label", menuOpen ? "Close menu" : "Open menu");
       if (menuOpen) {
-        menuToggle.style.background = "#0B0B0B";
-        menuToggle.querySelector("span:first-child").style.background = "#F4F1E8";
+        menuToggle.style.background = "#1C110A";
+        menuToggle.querySelector("span:first-child").style.background = "#F3E5D8";
         menuToggle.querySelector("span:first-child").style.transform = "rotate(45deg) translateY(3px)";
-        menuToggle.querySelector("span:last-child").style.background = "#F4F1E8";
+        menuToggle.querySelector("span:last-child").style.background = "#F3E5D8";
         menuToggle.querySelector("span:last-child").style.transform = "rotate(-45deg) translateY(-3px)";
       } else {
-        menuToggle.style.background = "#F4F1E8";
-        menuToggle.querySelector("span:first-child").style.background = "#111111";
+        menuToggle.style.background = "#F3E5D8";
+        menuToggle.querySelector("span:first-child").style.background = "#2B1B10";
         menuToggle.querySelector("span:first-child").style.transform = "none";
-        menuToggle.querySelector("span:last-child").style.background = "#111111";
+        menuToggle.querySelector("span:last-child").style.background = "#2B1B10";
         menuToggle.querySelector("span:last-child").style.transform = "none";
       }
     });
@@ -536,7 +536,7 @@
       if (menuOpen) menuToggle.click();
     }
 
-    const PROXY = "/api/chat?message=";
+    const CHAT_API = "/api/chat?message=";
 
     const messagesEl = document.getElementById("messages");
     const welcomeEl = document.getElementById("welcome");
@@ -629,7 +629,7 @@
       const msgDiv = document.createElement("div");
       msgDiv.className = `message ${role}`;
 
-      const imgSrc = "https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560";
+      const imgSrc = "/hero.png";
 
       const avatar = document.createElement("div");
       avatar.className = "avatar";
@@ -654,7 +654,7 @@
       const div = document.createElement("div");
       div.className = "message ai typing";
       div.id = "typing-indicator";
-      const imgSrc = "https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560";
+      const imgSrc = "/hero.png";
       div.innerHTML = `
         <div class="avatar"><img src="${imgSrc}" alt="" /></div>
         <div class="bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
@@ -678,17 +678,21 @@
       showTyping();
 
       try {
-        const resp = await fetch(PROXY + encodeURIComponent(text), {
-          method: "GET",
-          headers: { Accept: "application/json" },
-        });
-        const data = await resp.json();
+        const resp = await fetch(CHAT_API + encodeURIComponent(text));
+        const textResp = await resp.text();
+        let reply = "";
+        try {
+          const data = JSON.parse(textResp);
+          reply = data.response || data.reply || textResp;
+        } catch {
+          reply = textResp;
+        }
         removeTyping();
-        addMessage("ai", data.response || "Sorry, I couldn't process that.");
-        history.push({ role: "ai", content: data.response || "" });
+        addMessage("ai", reply || "Sorry, I couldn't process that.");
+        history.push({ role: "ai", content: reply || "" });
       } catch (e) {
         removeTyping();
-        addMessage("ai", "Could not reach the backend. Please try again.");
+        addMessage("ai", "Connection error. The AI server may be waking up GÇö please try again in a moment.");
       } finally {
         sendBtn.disabled = false;
         input.focus();
