@@ -4,44 +4,66 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Message parameter is required" });
   }
 
-  const BACKEND = "https://geoclub-backend.streamlit.app/";
-  const target = BACKEND + "?api=chat&message=" + encodeURIComponent(message);
+  const FASTAPI   = process.env.FASTAPI_URL || "https://geology-club-api.onrender.com";
+  const STREAMLIT = "https://geoclub-backend.streamlit.app/";
 
   let lastError = null;
 
-  for (let attempt = 0; attempt < 5; attempt++) {
-    try {
-      const response = await fetch(target, { signal: AbortSignal.timeout(120000) });
-      const html = await response.text();
+  // Try FastAPI first, fall back to Streamlit
+  for (const source of ["fastapi", "streamlit"]) {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        const target = source === "fastapi"
+          ? `${FASTAPI}/chat`
+          : `${STREAMLIT}?api=chat&message=${encodeURIComponent(message)}`;
 
-      const reply = extractReply(html);
-      if (reply) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        return res.status(200).json({ response: reply });
+        const fetchOpts = { signal: AbortSignal.timeout(120000) };
+        const body = source === "fastapi"
+          ? JSON.stringify({ message })
+          : undefined;
+
+        const response = source === "fastapi"
+          ? await fetch(target, { ...fetchOpts, method: "POST", headers: { "Content-Type": "application/json" }, body })
+          : await fetch(target, fetchOpts);
+
+        if (!response.ok) {
+          lastError = `HTTP ${response.status}`;
+          continue;
+        }
+
+        if (source === "fastapi") {
+          const data = await response.json();
+          if (data.response) {
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            return res.status(200).json({ response: data.response });
+          }
+        } else {
+          const html = await response.text();
+          const reply = extractStreamlitReply(html);
+          if (reply) {
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            return res.status(200).json({ response: reply });
+          }
+        }
+
+        lastError = "empty_response";
+      } catch (error) {
+        lastError = error.message;
       }
 
-      lastError = "empty_response";
-    } catch (error) {
-      lastError = error.message;
-    }
-
-    if (attempt < 4) {
-      await new Promise(r => setTimeout(r, 5000 + attempt * 3000));
+      if (attempt < 2) await new Promise(r => setTimeout(r, 5000));
     }
   }
 
   return res.status(502).json({ error: lastError });
 }
 
-function extractReply(html) {
+function extractStreamlitReply(html) {
   if (!html) return null;
-
   const m = html.match(/<!--GRS-->([\s\S]*?)<!--GRE-->/);
   if (m) return clean(m[1]);
-
   const jm = html.match(/\{"response"\s*:\s*"((?:[^"\\]|\\.)*?)"\s*\}/);
   if (jm) return clean(jm[1]);
-
   const blocks = html.match(/\{[^{}]{30,}\}/g) || [];
   for (const block of blocks) {
     try {
@@ -50,13 +72,6 @@ function extractReply(html) {
       if (v && typeof v === "string" && v.length > 5) return clean(v);
     } catch {}
   }
-
-  const tdm = html.match(/data-testid="stMarkdown"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i);
-  if (tdm) {
-    const txt = tdm[1].replace(/<[^>]+>/g, "").trim();
-    if (txt.length > 5) return clean(txt);
-  }
-
   return null;
 }
 
