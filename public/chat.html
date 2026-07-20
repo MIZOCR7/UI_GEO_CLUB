@@ -692,7 +692,7 @@
         history.push({ role: "ai", content: reply || "" });
       } catch (e) {
         removeTyping();
-        addMessage("ai", "Connection error. The AI server may be waking up ΓÇö please try again in a moment.");
+        addMessage("ai", "Connection error. The AI server may be waking up — please try again in a moment.");
       } finally {
         sendBtn.disabled = false;
         input.focus();
