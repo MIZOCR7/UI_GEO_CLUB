@@ -29,15 +29,6 @@ export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
           Main
         </a>
         <a
-          href="https://www.linkedin.com/in/ziad-emad-470604400/"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={onClose}
-          className="text-[36px] md:text-[42px] font-medium text-[#F3E5D8] no-underline leading-[130%] hover:opacity-70 transition-opacity duration-300"
-        >
-          Ziad
-        </a>
-        <a
           href="/chat.html"
           onClick={onClose}
           className="text-[36px] md:text-[42px] font-medium text-[#F3E5D8] no-underline leading-[130%] hover:opacity-70 transition-opacity duration-300"
@@ -47,14 +38,6 @@ export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
       </nav>
 
       <div className="flex flex-col gap-5 mt-8">
-        <a
-          href="https://www.linkedin.com/in/ziad-emad-470604400/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[18px] md:text-[20px] text-[#8B7D72] no-underline hover:text-[#F3E5D8] transition-colors duration-300"
-        >
-          Ziad Emad Ahmed
-        </a>
         <div className="flex gap-6">
           <a
             href="https://www.instagram.com/accounts/login/?next=%2Foctgeologyclub%2F&source=omni_redirect"
@@ -73,13 +56,14 @@ export default memo(function MenuPanel({ open, onClose }: MenuPanelProps) {
             Club LinkedIn
           </a>
           <a
-            href="https://www.linkedin.com/in/ziad-emad-470604400/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:geologyclub@stem6october.edu"
             className="text-[14px] text-[#8B7D72] underline underline-offset-2 hover:text-[#F3E5D8] transition-colors duration-300"
           >
-            Ziad
+            Email Club
           </a>
+        </div>
+        <div className="text-[13px] text-[#5C4E43]">
+          Developed by <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" className="text-[#8B7D72] underline underline-offset-2 hover:text-[#F3E5D8] transition-colors duration-300">Ziad Emad</a>
         </div>
       </div>
 
