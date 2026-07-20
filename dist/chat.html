@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C29B6D'/%3E%3Ctext x='50' y='68' font-family='Inter' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -106,7 +106,7 @@
     .messages-area {
       flex: 1;
       width: 100%;
-      max-width: 680px;
+      max-width: min(92vw, 800px);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -120,7 +120,7 @@
     .message {
       display: flex;
       gap: 12px;
-      max-width: 88%;
+      max-width: 90%;
       animation: msgIn 0.3s ease;
     }
     @keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -139,10 +139,10 @@
     .message .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .message .bubble {
-      padding: 14px 20px;
+      padding: 14px 22px;
       border-radius: 18px;
       font-size: 15px;
-      line-height: 1.65;
+      line-height: 1.7;
       word-break: break-word;
     }
     .message.user .bubble {
@@ -151,15 +151,16 @@
       border-bottom-right-radius: 4px;
       font-weight: 450;
       font-family: 'Inter', sans-serif;
+      letter-spacing: 0.01em;
     }
     .message.ai .bubble {
       background: #fff;
       color: #2B1B10;
       border-bottom-left-radius: 4px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.8;
       letter-spacing: -0.005em;
     }
 
@@ -188,17 +189,19 @@
     }
     .welcome .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
     .welcome h1 {
-      font-size: 22px; font-weight: 600; color: #2B1B10;
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 700; color: #2B1B10;
       margin-bottom: 8px; letter-spacing: -0.02em;
+      font-family: 'Playfair Display', Georgia, serif;
     }
     .welcome p {
-      font-size: 14px; color: #5C4E43; max-width: 400px;
-      margin: 0 auto; line-height: 1.5;
+      font-size: clamp(13px, 2.5vw, 15px); color: #5C4E43; max-width: 420px;
+      margin: 0 auto; line-height: 1.6;
     }
 
     .input-wrapper {
       width: 100%;
-      max-width: 680px;
+      max-width: min(92vw, 800px);
       background: #fff;
       border-radius: 9999px;
       display: flex;
@@ -331,28 +334,56 @@
     }
     .back-home-link:hover { color: #2B1B10; }
 
-    @media (max-width: 480px) {
-      .chat-container { padding: 80px 16px 90px; }
-      .welcome h1 { font-size: 19px; }
-      .welcome .avatar-circle { width: 64px; height: 64px; }
+    @media (max-width: 1024px) {
+      .chat-container { padding: 85px 16px 90px; }
+      .messages-area { max-width: 95vw; }
+      .input-wrapper { max-width: 95vw; }
+    }
+
+    @media (max-width: 768px) {
+      .chat-container { padding: 80px 14px 85px; }
+      .messages-area { gap: 14px; padding: 16px 0; }
+      .message { max-width: 92%; }
+      .message .bubble { font-size: 15px; padding: 12px 18px; line-height: 1.65; }
+      .message.ai .bubble { font-size: 15px; line-height: 1.7; }
       .input-wrapper { padding: 6px 6px 6px 18px; }
-      .input-wrapper input { font-size: 14px; padding: 12px 0; }
-      .send-btn { padding: 8px 14px 8px 12px; font-size: 13px; }
-      .message .bubble { font-size: 14px; padding: 12px 16px; }
+      .input-wrapper input { font-size: 15px; padding: 12px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .chat-container { padding: 75px 12px 80px; }
+      .messages-area { gap: 12px; padding: 12px 0; }
+      .message { max-width: 95%; gap: 8px; }
+      .message .avatar { width: 28px; height: 28px; }
+      .message .bubble { font-size: 14px; padding: 10px 14px; line-height: 1.6; }
+      .message.ai .bubble { font-size: 14px; line-height: 1.65; }
+      .welcome { padding: 30px 12px; }
+      .welcome .avatar-circle { width: 64px; height: 64px; }
+      .input-wrapper { padding: 5px 5px 5px 14px; }
+      .input-wrapper input { font-size: 14px; padding: 10px 0; }
+      .send-btn { padding: 8px 12px 8px 10px; font-size: 13px; }
+    }
+
+    @media (min-width: 1200px) {
+      .chat-container { padding: 90px 40px 100px; }
+      .messages-area { max-width: min(80vw, 860px); }
+      .input-wrapper { max-width: min(80vw, 860px); }
+      .message .bubble { font-size: 16px; padding: 16px 24px; }
+      .message.ai .bubble { font-size: 17px; line-height: 1.85; }
     }
 
     /* ---- RENDERED MARKDOWN STYLES ---- */
     .md-h3 {
       font-size: 17px; font-weight: 700; color: #2B1B10;
       margin: 18px 0 8px; letter-spacing: -0.01em;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Playfair Display', Georgia, serif;
     }
     .md-h3:first-child { margin-top: 0; }
     .md-h2 {
-      font-size: 20px; font-weight: 700; color: #1C110A;
+      font-size: clamp(18px, 3vw, 22px); font-weight: 700; color: #1C110A;
       margin: 22px 0 10px; letter-spacing: -0.02em;
       padding-bottom: 6px; border-bottom: 2px solid #C29B6D;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Playfair Display', Georgia, serif;
     }
     .md-h2:first-child { margin-top: 0; }
     .md-strong { font-weight: 700; color: #2B1B10; font-family: 'Source Serif 4', serif; }
