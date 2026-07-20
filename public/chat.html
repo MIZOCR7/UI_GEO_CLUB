@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geology Club AI — STEM 6th October</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C29B6D'/%3E%3Ctext x='50' y='68' font-family='Inter' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2375C5DE'/%3E%3Ctext x='50' y='68' font-family='Inter' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
@@ -13,8 +13,8 @@
 
     html, body {
       margin: 0; padding: 0;
-      background: #EAD8C3;
-      color: #2B1B10;
+      background: #E4E4E4;
+      color: #111111;
       overflow: hidden;
       width: 100%; height: 100%;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -58,12 +58,12 @@
       border: none; cursor: pointer;
       display: flex; flex-direction: column; gap: 4px;
       align-items: center; justify-content: center;
-      background: #F3E5D8; text-decoration: none;
+      background: #F4F1E8; text-decoration: none;
       transition: background 0.3s ease;
     }
     .burger-btn span {
       display: block; width: 24px; height: 2px;
-      background: #2B1B10; transition: all 0.3s ease;
+      background: #111111; transition: all 0.3s ease;
     }
     .burger-btn:hover span:first-child { width: 16px; }
     .burger-btn:hover span:last-child  { width: 16px; }
@@ -75,7 +75,7 @@
       z-index: 2; pointer-events: none;
       text-align: center;
       font-weight: 500;
-      color: #F3E5D8;
+      color: #F4F1E8;
       line-height: 80%;
       letter-spacing: -0.04em;
       white-space: nowrap;
@@ -124,8 +124,8 @@
       display: flex; align-items: center; justify-content: center;
       overflow: hidden; margin-top: 4px;
     }
-    .message.user .avatar { background: #C29B6D; }
-    .message.ai .avatar { background: #EAD8C3; }
+    .message.user .avatar { background: #75C5DE; }
+    .message.ai .avatar { background: #B3DDEB; }
     .message .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .message .bubble {
@@ -136,7 +136,7 @@
       word-break: break-word;
     }
     .message.user .bubble {
-      background: #2B1B10;
+      background: #111111;
       color: #fff;
       border-bottom-right-radius: 4px;
       font-weight: 450;
@@ -144,7 +144,7 @@
     }
     .message.ai .bubble {
       background: #fff;
-      color: #2B1B10;
+      color: #1a1a1a;
       border-bottom-left-radius: 4px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -159,7 +159,7 @@
     }
     .typing .dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: #8B7D72;
+      background: #9A9A9A;
       animation: dotPulse 1.2s infinite ease-in-out;
     }
     .typing .dot:nth-child(2) { animation-delay: 0.2s; }
@@ -172,17 +172,17 @@
     }
     .welcome .avatar-circle {
       width: 80px; height: 80px; border-radius: 50%;
-      background: #EAD8C3;
+      background: #B3DDEB;
       display: flex; align-items: center; justify-content: center;
       overflow: hidden; margin: 0 auto 16px;
     }
     .welcome .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
     .welcome h1 {
-      font-size: 22px; font-weight: 600; color: #2B1B10;
+      font-size: 22px; font-weight: 600; color: #111111;
       margin-bottom: 8px; letter-spacing: -0.02em;
     }
     .welcome p {
-      font-size: 14px; color: #5C4E43; max-width: 400px;
+      font-size: 14px; color: #6B6B6B; max-width: 400px;
       margin: 0 auto; line-height: 1.5;
     }
 
@@ -209,10 +209,10 @@
       font-family: 'Inter', sans-serif;
       font-size: 15px;
       font-weight: 400;
-      color: #2B1B10;
+      color: #111111;
       padding: 14px 0;
     }
-    .input-wrapper input::placeholder { color: #8B7D72; }
+    .input-wrapper input::placeholder { color: #9A9A9A; }
     @media (min-width: 768px) { .input-wrapper input { font-size: 16px; } }
 
     .send-btn {
@@ -222,7 +222,7 @@
       gap: 8px;
       padding: 10px 20px 10px 18px;
       border: none; border-radius: 9999px;
-      background: #C29B6D;
+      background: #75C5DE;
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
@@ -230,12 +230,12 @@
       cursor: pointer;
       transition: background 0.2s ease, transform 0.2s ease;
     }
-    .send-btn:hover { background: #A88454; }
+    .send-btn:hover { background: #5fb8d4; }
     .send-btn:active { transform: scale(0.96); }
     .send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .send-btn svg { width: 16px; height: 16px; display: block; }
 
-    /* ---- Menu panel ---- */
+    /* ---- Menu panel (same as main page) ---- */
     .menu-panel {
       position: fixed;
       z-index: 9;
@@ -246,7 +246,7 @@
       justify-content: space-between;
       transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
       padding: 90px 32px 60px;
-      background: rgba(28,17,10,0.95);
+      background: rgba(17,17,17,0.95);
       backdrop-filter: blur(26px);
       -webkit-backdrop-filter: blur(26px);
       top: -600px;
@@ -269,7 +269,7 @@
     .menu-panel nav a {
       font-size: 36px;
       font-weight: 500;
-      color: #F3E5D8;
+      color: #F4F1E8;
       text-decoration: none;
       line-height: 130%;
       transition: opacity 0.3s ease;
@@ -287,11 +287,11 @@
     }
     .menu-panel .menu-footer .menu-email {
       font-size: 18px;
-      color: #8B7D72;
+      color: #9A9590;
       text-decoration: none;
       transition: color 0.3s ease;
     }
-    .menu-panel .menu-footer .menu-email:hover { color: #F3E5D8; }
+    .menu-panel .menu-footer .menu-email:hover { color: #F4F1E8; }
     @media (min-width: 768px) {
       .menu-panel .menu-footer .menu-email { font-size: 20px; }
     }
@@ -301,12 +301,14 @@
     }
     .menu-panel .menu-footer .menu-socials a {
       font-size: 14px;
-      color: #8B7D72;
+      color: #9A9590;
       text-decoration: underline;
       text-underline-offset: 2px;
       transition: color 0.3s ease;
     }
-    .menu-panel .menu-footer .menu-socials a:hover { color: #F3E5D8; }
+    .menu-panel .menu-footer .menu-socials a:hover { color: #F4F1E8; }
+
+    .menu-panel .menu-cta-wrap { margin-top: 32px; }
 
     .back-home-link {
       position: fixed;
@@ -314,12 +316,12 @@
       transform: translateX(-50%);
       z-index: 12;
       font-size: 13px;
-      color: #8B7D72;
+      color: #9A9A9A;
       text-decoration: none;
       font-family: 'Inter', sans-serif;
       transition: color 0.2s ease;
     }
-    .back-home-link:hover { color: #2B1B10; }
+    .back-home-link:hover { color: #111111; }
 
     @media (max-width: 480px) {
       .chat-container { padding: 80px 16px 90px; }
@@ -333,45 +335,110 @@
 
     /* ---- RENDERED MARKDOWN STYLES ---- */
     .md-h3 {
-      font-size: 17px; font-weight: 700; color: #2B1B10;
-      margin: 18px 0 8px; letter-spacing: -0.01em;
+      font-size: 17px;
+      font-weight: 700;
+      color: #111111;
+      margin: 18px 0 8px;
+      letter-spacing: -0.01em;
       font-family: 'Inter', sans-serif;
     }
     .md-h3:first-child { margin-top: 0; }
+
     .md-h2 {
-      font-size: 20px; font-weight: 700; color: #1C110A;
-      margin: 22px 0 10px; letter-spacing: -0.02em;
-      padding-bottom: 6px; border-bottom: 2px solid #C29B6D;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin: 22px 0 10px;
+      letter-spacing: -0.02em;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #75C5DE;
       font-family: 'Inter', sans-serif;
     }
     .md-h2:first-child { margin-top: 0; }
-    .md-strong { font-weight: 700; color: #2B1B10; font-family: 'Source Serif 4', serif; }
-    .md-em { font-style: italic; color: #5C4E43; }
-    .md-highlight { color: #543B26; font-weight: 600; }
+
+    .md-strong {
+      font-weight: 700;
+      color: #111111;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    .md-em {
+      font-style: italic;
+      color: #555;
+    }
+
+    .md-highlight {
+      color: #0f7a9e;
+      font-weight: 600;
+    }
+
     .md-page {
-      display: inline-block; background: #F3E5D8; color: #543B26;
-      font-family: 'JetBrains Mono', monospace; font-size: 12px;
-      font-weight: 500; padding: 1px 8px; border-radius: 4px; letter-spacing: 0.01em;
+      display: inline-block;
+      background: #E8F4F9;
+      color: #0f7a9e;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 1px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.01em;
     }
-    .md-list { margin: 8px 0; padding-left: 22px; list-style: none; }
-    .md-list li { position: relative; margin-bottom: 5px; padding-left: 6px; line-height: 1.55; }
+
+    .md-list {
+      margin: 8px 0;
+      padding-left: 22px;
+      list-style: none;
+    }
+    .md-list li {
+      position: relative;
+      margin-bottom: 5px;
+      padding-left: 6px;
+      line-height: 1.55;
+    }
     .md-list li::before {
-      content: ""; position: absolute; left: -16px; top: 9px;
-      width: 6px; height: 6px; border-radius: 50%; background: #C29B6D;
+      content: "";
+      position: absolute;
+      left: -16px;
+      top: 9px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #75C5DE;
     }
-    .md-ol { margin: 8px 0; padding-left: 22px; }
-    .md-ol li { margin-bottom: 5px; padding-left: 4px; line-height: 1.55; }
-    .md-ol li::marker { color: #C29B6D; font-weight: 600; }
+
+    .md-ol {
+      margin: 8px 0;
+      padding-left: 22px;
+    }
+    .md-ol li {
+      margin-bottom: 5px;
+      padding-left: 4px;
+      line-height: 1.55;
+    }
+    .md-ol li::marker {
+      color: #75C5DE;
+      font-weight: 600;
+    }
+
     .md-divider {
-      margin: 16px 0; border: none; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(194,155,109,0.3), transparent);
+      margin: 16px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(117,197,222,0.3), transparent);
     }
-    .md-p { margin: 7px 0; }
+
+    .md-p {
+      margin: 7px 0;
+    }
     .md-p:first-child { margin-top: 0; }
+
     .md-p:first-child::first-letter {
-      font-size: 1.45em; font-weight: 700; color: #C29B6D;
-      font-family: 'Source Serif 4', serif; margin-right: 2px;
-      float: left; line-height: 0.9;
+      font-size: 1.45em;
+      font-weight: 700;
+      color: #75C5DE;
+      font-family: 'Source Serif 4', serif;
+      margin-right: 2px;
+      float: left;
+      line-height: 0.9;
     }
   </style>
 </head>
@@ -395,6 +462,7 @@
     </div>
   </div>
 
+  <!-- Menu panel (same as main page) -->
   <div class="menu-panel" id="menu-panel">
     <nav>
       <a href="/" onclick="closeMenu()">Main</a>
@@ -419,11 +487,11 @@
     <div class="messages-area" id="messages">
       <div class="welcome" id="welcome">
         <div class="avatar-circle">
-          <img src="/hero.png" alt="" />
+          <img src="https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560" alt="" />
         </div>
         <h1>Ziad Emad Ahmed</h1>
-        <p>Senior 27 AI Engineer — <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" style="color:#C29B6D;text-decoration:none;font-weight:500;">LinkedIn &rarr;</a></p>
-        <p style="margin-top:8px;font-size:13px;color:#8B7D72;">Ask me anything about geology, AI, or engineering!</p>
+        <p>Senior 27 AI Engineer — <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" style="color:#75C5DE;text-decoration:none;font-weight:500;">LinkedIn &rarr;</a></p>
+        <p style="margin-top:8px;font-size:13px;color:#9A9A9A;">Ask me anything about geology, AI, or engineering!</p>
       </div>
     </div>
 
@@ -439,11 +507,9 @@
   </div>
 
   <script>
-    /* ================================================================
-       MENU TOGGLE
-    ================================================================ */
+    /* ---- Menu toggle ---- */
     const menuToggle = document.getElementById("menu-toggle");
-    const menuPanel  = document.getElementById("menu-panel");
+    const menuPanel = document.getElementById("menu-panel");
     let menuOpen = false;
 
     menuToggle.addEventListener("click", () => {
@@ -452,17 +518,17 @@
       menuToggle.classList.toggle("active", menuOpen);
       menuToggle.setAttribute("aria-label", menuOpen ? "Close menu" : "Open menu");
       if (menuOpen) {
-        menuToggle.style.background = "#1C110A";
-        menuToggle.querySelector("span:first-child").style.background  = "#F3E5D8";
-        menuToggle.querySelector("span:first-child").style.transform   = "rotate(45deg) translateY(3px)";
-        menuToggle.querySelector("span:last-child").style.background   = "#F3E5D8";
-        menuToggle.querySelector("span:last-child").style.transform    = "rotate(-45deg) translateY(-3px)";
+        menuToggle.style.background = "#0B0B0B";
+        menuToggle.querySelector("span:first-child").style.background = "#F4F1E8";
+        menuToggle.querySelector("span:first-child").style.transform = "rotate(45deg) translateY(3px)";
+        menuToggle.querySelector("span:last-child").style.background = "#F4F1E8";
+        menuToggle.querySelector("span:last-child").style.transform = "rotate(-45deg) translateY(-3px)";
       } else {
-        menuToggle.style.background = "#F3E5D8";
-        menuToggle.querySelector("span:first-child").style.background  = "#2B1B10";
-        menuToggle.querySelector("span:first-child").style.transform   = "none";
-        menuToggle.querySelector("span:last-child").style.background   = "#2B1B10";
-        menuToggle.querySelector("span:last-child").style.transform    = "none";
+        menuToggle.style.background = "#F4F1E8";
+        menuToggle.querySelector("span:first-child").style.background = "#111111";
+        menuToggle.querySelector("span:first-child").style.transform = "none";
+        menuToggle.querySelector("span:last-child").style.background = "#111111";
+        menuToggle.querySelector("span:last-child").style.transform = "none";
       }
     });
 
@@ -470,134 +536,117 @@
       if (menuOpen) menuToggle.click();
     }
 
-    /* ================================================================
-       API ENDPOINTS — calls Vercel proxy (no CORS issues)
-    ================================================================ */
-    const CHAT_API   = "/api/chat?message=";
-    const HEALTH_API = "/api/health";
+    const PROXY = "/api/chat?message=";
 
-    /* ================================================================
-       FETCH WITH TIMEOUT (AbortController)
-    ================================================================ */
-    function fetchWithTimeout(url, ms) {
-      const ctrl  = new AbortController();
-      const timer = setTimeout(() => ctrl.abort(), ms);
-      return fetch(url, { signal: ctrl.signal })
-        .finally(() => clearTimeout(timer));
-    }
+    const messagesEl = document.getElementById("messages");
+    const welcomeEl = document.getElementById("welcome");
+    const form = document.getElementById("chat-form");
+    const input = document.getElementById("chat-input");
+    const sendBtn = document.getElementById("send-btn");
 
-    /* ================================================================
-       CALL BACKEND — via Vercel proxy (server-to-server, no CORS)
-    ================================================================ */
-    async function callBackend(message) {
-      const target = CHAT_API + encodeURIComponent(message);
+    let history = [];
 
-      const statusSteps = ["Waking up the AI professor...", "Searching the textbook...", "Still thinking...", "Almost there..."];
-      let step = 0;
-      const statusTimer = setInterval(() => {
-        step = Math.min(step + 1, statusSteps.length - 1);
-        setStatus(statusSteps[step]);
-      }, 15000);
-
-      try {
-        const r = await fetchWithTimeout(target, 180000);
-        const j = await r.json();
-        if (!r.ok) throw new Error(j.error || "request_failed");
-        return j.response;
-      } finally {
-        clearInterval(statusTimer);
-      }
-    }
-
-    /* ================================================================
-       RESPONSE PARSER
-       The Vercel proxy now returns clean AI text (no HTML wrapping).
-       This is just a safety net for edge cases.
-    ================================================================ */
-    function extractReply(raw) {
-      if (!raw || !raw.trim()) return null;
-
-      // Already clean text from Vercel proxy — return as-is
-      if (!raw.startsWith("{") && !raw.startsWith("<")) return raw.trim();
-
-      // Fallback: try to parse as JSON
-      try {
-        const d = JSON.parse(raw);
-        return d.response || d.reply || d.answer || d.message || d.text || raw.trim();
-      } catch {}
-
-      // Last resort: strip any HTML tags
-      return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-    }
-
-    /* ================================================================
-       MARKDOWN RENDERER
-    ================================================================ */
     function renderMarkdown(text) {
       text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-      text = text.replace(/\[Page\s*(\d+(?:[\s-]+\d+)?)\]/gi, m => `<span class="md-page">${m}</span>`);
-      text = text.replace(/\[Source:\s*([^\]]+)\]/gi, m => ` <span class="md-page">${m}</span>`);
 
-      const lines = text.split("\n");
-      let html = "", i = 0;
+      text = text.replace(/\[Page\s*(\d+(?:[\s-]+\d+)?)\]/gi, (m, p) =>
+        `<span class="md-page">${m}</span>`
+      );
+
+      text = text.replace(/\[Source:\s*([^\]]+)\]/gi, (m, p) =>
+        ` <span class="md-page">${m}</span>`
+      );
+
+      const lines = text.split("\n").filter(l => l.trim() !== "" || l === "");
+
+      let html = "";
+      let i = 0;
 
       while (i < lines.length) {
-        const t = lines[i].trim();
-        if (t.startsWith("### ")) { html += `<div class="md-h3">${inline(t.slice(4))}</div>`; i++; }
-        else if (t.startsWith("## "))  { html += `<div class="md-h2">${inline(t.slice(3))}</div>`; i++; }
-        else if (t === "---" || t === "***") { html += `<hr class="md-divider" />`; i++; }
-        else if (t.startsWith("- ") || t.startsWith("* ")) {
-          const items = [];
-          while (i < lines.length && (lines[i].trim().startsWith("- ") || lines[i].trim().startsWith("* "))) {
-            items.push(inline(lines[i].trim().slice(2))); i++;
+        const line = lines[i];
+        const trimmed = line.trim();
+
+        if (trimmed.startsWith("### ")) {
+          html += `<div class="md-h3">${inlineMarkup(trimmed.slice(4))}</div>`;
+          i++;
+        }
+        else if (trimmed.startsWith("## ")) {
+          html += `<div class="md-h2">${inlineMarkup(trimmed.slice(3))}</div>`;
+          i++;
+        }
+        else if (trimmed === "---" || trimmed === "***") {
+          html += `<hr class="md-divider" />`;
+          i++;
+        }
+        else if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+          let items = [];
+          while (i < lines.length) {
+            const t = lines[i].trim();
+            if (t.startsWith("- ") || t.startsWith("* ")) {
+              items.push(inlineMarkup(t.slice(2)));
+              i++;
+            } else break;
           }
           html += `<ul class="md-list">${items.map(it => `<li>${it}</li>`).join("")}</ul>`;
         }
-        else if (/^\d+[.)]\s/.test(t)) {
-          const items = [];
-          while (i < lines.length && /^\d+[.)]\s/.test(lines[i].trim())) {
-            items.push(inline(lines[i].trim().replace(/^\d+[.)]\s/, ""))); i++;
+        else if (/^\d+[.)]\s/.test(trimmed)) {
+          let items = [];
+          while (i < lines.length) {
+            const t = lines[i].trim();
+            if (/^\d+[.)]\s/.test(t)) {
+              items.push(inlineMarkup(t.replace(/^\d+[.)]\s/, "")));
+              i++;
+            } else break;
           }
           html += `<ol class="md-ol">${items.map(it => `<li>${it}</li>`).join("")}</ol>`;
         }
-        else if (t === "") { i++; }
-        else { html += `<div class="md-p">${inline(t)}</div>`; i++; }
+        else if (trimmed === "") {
+          i++;
+        }
+        else {
+          html += `<div class="md-p">${inlineMarkup(trimmed)}</div>`;
+          i++;
+        }
       }
+
       return html;
     }
 
-    function inline(text) {
+    function inlineMarkup(text) {
       text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="md-strong">$1</strong>');
-      text = text.replace(/\*(.+?)\*/g,     '<em class="md-em">$1</em>');
-      text = text.replace(/`([^`]+)`/g,     '<code class="md-page">$1</code>');
-      const geo = /\b(igneous|sedimentary|metamorphic|magma|lava|erosion|weathering|fossil|mineral|crystal|tectonic|strata|sediment|mantle|crust|core|fault|fold|quake|magmatic|deposit|bedrock|ore|gem)\b/gi;
-      return text.replace(geo, '<span class="md-highlight">$1</span>');
-    }
+      text = text.replace(/\*(.+?)\*/g, '<em class="md-em">$1</em>');
+      text = text.replace(/`([^`]+)`/g, '<code class="md-page">$1</code>');
 
-    /* ================================================================
-       CHAT UI
-    ================================================================ */
-    const messagesEl = document.getElementById("messages");
-    const welcomeEl  = document.getElementById("welcome");
-    const form       = document.getElementById("chat-form");
-    const inputEl    = document.getElementById("chat-input");
-    const sendBtn    = document.getElementById("send-btn");
-    let history = [];
+      const geologyTerms = /\b(igneous|sedimentary|metamorphic|magma|lava|erosion|weathering|fossil|mineral|crystal|tectonic|strata|sediment|mantle|crust|core|fault|fold|quake|magmatic|deposit|bedrock|ore|gem)\b/gi;
+      text = text.replace(geologyTerms, '<span class="md-highlight">$1</span>');
+
+      return text;
+    }
 
     function addMessage(role, text) {
       welcomeEl.style.display = "none";
-      const wrap   = document.createElement("div");
-      wrap.className = `message ${role}`;
+
+      const msgDiv = document.createElement("div");
+      msgDiv.className = `message ${role}`;
+
+      const imgSrc = "https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560";
+
       const avatar = document.createElement("div");
       avatar.className = "avatar";
-      avatar.innerHTML = `<img src="/hero.png" alt="" />`;
+      avatar.innerHTML = `<img src="${imgSrc}" alt="" />`;
+
       const bubble = document.createElement("div");
       bubble.className = "bubble";
-      if (role === "ai") bubble.innerHTML = renderMarkdown(text);
-      else bubble.textContent = text;
-      wrap.appendChild(avatar);
-      wrap.appendChild(bubble);
-      messagesEl.appendChild(wrap);
+
+      if (role === "ai") {
+        bubble.innerHTML = renderMarkdown(text);
+      } else {
+        bubble.textContent = text;
+      }
+
+      msgDiv.appendChild(avatar);
+      msgDiv.appendChild(bubble);
+      messagesEl.appendChild(msgDiv);
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
 
@@ -605,8 +654,9 @@
       const div = document.createElement("div");
       div.className = "message ai typing";
       div.id = "typing-indicator";
+      const imgSrc = "https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560";
       div.innerHTML = `
-        <div class="avatar"><img src="/hero.png" alt="" /></div>
+        <div class="avatar"><img src="${imgSrc}" alt="" /></div>
         <div class="bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
       `;
       messagesEl.appendChild(div);
@@ -618,20 +668,9 @@
       if (el) el.remove();
     }
 
-    function setStatus(text) {
-      const el = document.getElementById("typing-indicator");
-      if (!el) return;
-      const b = el.querySelector(".bubble");
-      if (b) b.innerHTML = `<span style="font-size:13px;color:#8B7D72;font-family:'Inter',sans-serif;">${text}</span>`;
-    }
-
-    /* ================================================================
-       SEND MESSAGE
-    ================================================================ */
     async function sendMessage(text) {
-      text = text.trim();
-      if (!text) return;
-      inputEl.value = "";
+      if (!text.trim()) return;
+      input.value = "";
       sendBtn.disabled = true;
 
       addMessage("user", text);
@@ -639,27 +678,34 @@
       showTyping();
 
       try {
-        const raw   = await callBackend(text);
-        const reply = extractReply(raw);
+        const resp = await fetch(PROXY + encodeURIComponent(text), {
+          method: "GET",
+          headers: { Accept: "application/json" },
+        });
+        const data = await resp.json();
         removeTyping();
-        addMessage("ai", reply || "I got a response but couldn't read the answer. Please try again.");
-        history.push({ role: "ai", content: reply || "" });
-      } catch {
+        addMessage("ai", data.response || "Sorry, I couldn't process that.");
+        history.push({ role: "ai", content: data.response || "" });
+      } catch (e) {
         removeTyping();
-        addMessage("ai", "Could not reach the backend. Please try again in a moment.");
+        addMessage("ai", "Could not reach the backend. Please try again.");
       } finally {
         sendBtn.disabled = false;
-        inputEl.focus();
+        input.focus();
       }
     }
 
-    form.addEventListener("submit", e => { e.preventDefault(); sendMessage(inputEl.value); });
-    inputEl.addEventListener("keydown", e => {
-      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(inputEl.value); }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      sendMessage(input.value);
     });
 
-    // Silently warm up the backend on page load
-    (async () => { try { await fetchWithTimeout(HEALTH_API, 30000); } catch {} })();
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage(input.value);
+      }
+    });
   </script>
 </body>
 </html>
