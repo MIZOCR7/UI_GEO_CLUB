@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const BACKEND = process.env.BACKEND_URL || "https://geoclub-backend.example.com";
+  const BACKEND = process.env.BACKEND_URL || "https://miaaiassistant-geology-professor.hf.space";
   const target = `${BACKEND}/`;
 
   try {

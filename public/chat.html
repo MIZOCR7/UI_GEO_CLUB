@@ -473,8 +473,9 @@
     /* ================================================================
        API ENDPOINTS — calls Vercel proxy (no CORS issues)
     ================================================================ */
-    const CHAT_API   = "/api/chat?message=";
-    const HEALTH_API = "/api/health";
+    const HF_SPACE   = "https://miaaiassistant-geology-professor.hf.space";
+    const CHAT_API   = HF_SPACE + "/api/chat?message=";
+    const HEALTH_API = HF_SPACE + "/api/health";
 
     /* ================================================================
        FETCH WITH TIMEOUT (AbortController)

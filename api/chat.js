@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Message parameter is required" });
   }
 
-  const BACKEND = process.env.BACKEND_URL || "https://geoclub-backend.example.com";
+  const BACKEND = process.env.BACKEND_URL || "https://miaaiassistant-geology-professor.hf.space";
   const target = `${BACKEND}/api/chat`;
 
   let lastError = null;
