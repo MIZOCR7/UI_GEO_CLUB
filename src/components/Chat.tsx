@@ -15,6 +15,24 @@ export default function Chat({ onBack }: { onBack: () => void }) {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
+  const askGeologyProfessor = async (userQuestion: string): Promise<string> => {
+    const encodedMessage = encodeURIComponent(userQuestion);
+    const backendUrl = `/api/chat?message=${encodedMessage}`;
+
+    const response = await fetch(backendUrl, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(180000),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.response;
+  };
+
   const sendMessage = async () => {
     const text = input.trim();
     if (!text || loading) return;
@@ -23,16 +41,12 @@ export default function Chat({ onBack }: { onBack: () => void }) {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/chat?message=" + encodeURIComponent(text), {
-        signal: AbortSignal.timeout(180000),
-      });
-      const data = await res.json();
-      const reply = data.response || "No response received.";
+      const reply = await askGeologyProfessor(text);
       setMessages((prev) => [...prev, { role: "ai", content: reply }]);
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "ai", content: "Could not reach the backend. Please try again." },
+        { role: "ai", content: "عذراً، حدث خطأ في الاتصال بسيرفر الأستاذ الآلي." },
       ]);
     } finally {
       setLoading(false);
