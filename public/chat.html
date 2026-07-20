@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geology Club AI ΓÇö STEM 6th October</title>
+  <title>Geology Club AI — STEM 6th October</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C29B6D'/%3E%3Ctext x='50' y='68' font-family='Inter' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -235,7 +235,7 @@
     .send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .send-btn svg { width: 16px; height: 16px; display: block; }
 
-    /* ---- Menu panel (same as main page) ---- */
+    /* ---- Menu panel ---- */
     .menu-panel {
       position: fixed;
       z-index: 9;
@@ -308,8 +308,6 @@
     }
     .menu-panel .menu-footer .menu-socials a:hover { color: #F3E5D8; }
 
-    .menu-panel .menu-cta-wrap { margin-top: 32px; }
-
     .back-home-link {
       position: fixed;
       bottom: 24px; left: 50%;
@@ -335,110 +333,45 @@
 
     /* ---- RENDERED MARKDOWN STYLES ---- */
     .md-h3 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #2B1B10;
-      margin: 18px 0 8px;
-      letter-spacing: -0.01em;
+      font-size: 17px; font-weight: 700; color: #2B1B10;
+      margin: 18px 0 8px; letter-spacing: -0.01em;
       font-family: 'Inter', sans-serif;
     }
     .md-h3:first-child { margin-top: 0; }
-
     .md-h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #1C110A;
-      margin: 22px 0 10px;
-      letter-spacing: -0.02em;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #C29B6D;
+      font-size: 20px; font-weight: 700; color: #1C110A;
+      margin: 22px 0 10px; letter-spacing: -0.02em;
+      padding-bottom: 6px; border-bottom: 2px solid #C29B6D;
       font-family: 'Inter', sans-serif;
     }
     .md-h2:first-child { margin-top: 0; }
-
-    .md-strong {
-      font-weight: 700;
-      color: #2B1B10;
-      font-family: 'Source Serif 4', serif;
-    }
-
-    .md-em {
-      font-style: italic;
-      color: #5C4E43;
-    }
-
-    .md-highlight {
-      color: #543B26;
-      font-weight: 600;
-    }
-
+    .md-strong { font-weight: 700; color: #2B1B10; font-family: 'Source Serif 4', serif; }
+    .md-em { font-style: italic; color: #5C4E43; }
+    .md-highlight { color: #543B26; font-weight: 600; }
     .md-page {
-      display: inline-block;
-      background: #F3E5D8;
-      color: #543B26;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 1px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.01em;
+      display: inline-block; background: #F3E5D8; color: #543B26;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      font-weight: 500; padding: 1px 8px; border-radius: 4px; letter-spacing: 0.01em;
     }
-
-    .md-list {
-      margin: 8px 0;
-      padding-left: 22px;
-      list-style: none;
-    }
-    .md-list li {
-      position: relative;
-      margin-bottom: 5px;
-      padding-left: 6px;
-      line-height: 1.55;
-    }
+    .md-list { margin: 8px 0; padding-left: 22px; list-style: none; }
+    .md-list li { position: relative; margin-bottom: 5px; padding-left: 6px; line-height: 1.55; }
     .md-list li::before {
-      content: "";
-      position: absolute;
-      left: -16px;
-      top: 9px;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #C29B6D;
+      content: ""; position: absolute; left: -16px; top: 9px;
+      width: 6px; height: 6px; border-radius: 50%; background: #C29B6D;
     }
-
-    .md-ol {
-      margin: 8px 0;
-      padding-left: 22px;
-    }
-    .md-ol li {
-      margin-bottom: 5px;
-      padding-left: 4px;
-      line-height: 1.55;
-    }
-    .md-ol li::marker {
-      color: #C29B6D;
-      font-weight: 600;
-    }
-
+    .md-ol { margin: 8px 0; padding-left: 22px; }
+    .md-ol li { margin-bottom: 5px; padding-left: 4px; line-height: 1.55; }
+    .md-ol li::marker { color: #C29B6D; font-weight: 600; }
     .md-divider {
-      margin: 16px 0;
-      border: none;
-      height: 1px;
+      margin: 16px 0; border: none; height: 1px;
       background: linear-gradient(90deg, transparent, rgba(194,155,109,0.3), transparent);
     }
-
-    .md-p {
-      margin: 7px 0;
-    }
+    .md-p { margin: 7px 0; }
     .md-p:first-child { margin-top: 0; }
-
     .md-p:first-child::first-letter {
-      font-size: 1.45em;
-      font-weight: 700;
-      color: #C29B6D;
-      font-family: 'Source Serif 4', serif;
-      margin-right: 2px;
-      float: left;
-      line-height: 0.9;
+      font-size: 1.45em; font-weight: 700; color: #C29B6D;
+      font-family: 'Source Serif 4', serif; margin-right: 2px;
+      float: left; line-height: 0.9;
     }
   </style>
 </head>
@@ -462,7 +395,6 @@
     </div>
   </div>
 
-  <!-- Menu panel (same as main page) -->
   <div class="menu-panel" id="menu-panel">
     <nav>
       <a href="/" onclick="closeMenu()">Main</a>
@@ -490,7 +422,7 @@
           <img src="/hero.png" alt="" />
         </div>
         <h1>Ziad Emad Ahmed</h1>
-        <p>Senior 27 AI Engineer ΓÇö <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" style="color:#C29B6D;text-decoration:none;font-weight:500;">LinkedIn &rarr;</a></p>
+        <p>Senior 27 AI Engineer — <a href="https://www.linkedin.com/in/ziad-emad-470604400/" target="_blank" rel="noopener noreferrer" style="color:#C29B6D;text-decoration:none;font-weight:500;">LinkedIn &rarr;</a></p>
         <p style="margin-top:8px;font-size:13px;color:#8B7D72;">Ask me anything about geology, AI, or engineering!</p>
       </div>
     </div>
@@ -507,9 +439,11 @@
   </div>
 
   <script>
-    /* ---- Menu toggle ---- */
+    /* ================================================================
+       MENU TOGGLE
+    ================================================================ */
     const menuToggle = document.getElementById("menu-toggle");
-    const menuPanel = document.getElementById("menu-panel");
+    const menuPanel  = document.getElementById("menu-panel");
     let menuOpen = false;
 
     menuToggle.addEventListener("click", () => {
@@ -519,16 +453,16 @@
       menuToggle.setAttribute("aria-label", menuOpen ? "Close menu" : "Open menu");
       if (menuOpen) {
         menuToggle.style.background = "#1C110A";
-        menuToggle.querySelector("span:first-child").style.background = "#F3E5D8";
-        menuToggle.querySelector("span:first-child").style.transform = "rotate(45deg) translateY(3px)";
-        menuToggle.querySelector("span:last-child").style.background = "#F3E5D8";
-        menuToggle.querySelector("span:last-child").style.transform = "rotate(-45deg) translateY(-3px)";
+        menuToggle.querySelector("span:first-child").style.background  = "#F3E5D8";
+        menuToggle.querySelector("span:first-child").style.transform   = "rotate(45deg) translateY(3px)";
+        menuToggle.querySelector("span:last-child").style.background   = "#F3E5D8";
+        menuToggle.querySelector("span:last-child").style.transform    = "rotate(-45deg) translateY(-3px)";
       } else {
         menuToggle.style.background = "#F3E5D8";
-        menuToggle.querySelector("span:first-child").style.background = "#2B1B10";
-        menuToggle.querySelector("span:first-child").style.transform = "none";
-        menuToggle.querySelector("span:last-child").style.background = "#2B1B10";
-        menuToggle.querySelector("span:last-child").style.transform = "none";
+        menuToggle.querySelector("span:first-child").style.background  = "#2B1B10";
+        menuToggle.querySelector("span:first-child").style.transform   = "none";
+        menuToggle.querySelector("span:last-child").style.background   = "#2B1B10";
+        menuToggle.querySelector("span:last-child").style.transform    = "none";
       }
     });
 
@@ -536,117 +470,134 @@
       if (menuOpen) menuToggle.click();
     }
 
-    const CHAT_API = "/api/chat?message=";
+    /* ================================================================
+       API ENDPOINTS — calls Vercel proxy (no CORS issues)
+    ================================================================ */
+    const CHAT_API   = "/api/chat?message=";
+    const HEALTH_API = "/api/health";
 
-    const messagesEl = document.getElementById("messages");
-    const welcomeEl = document.getElementById("welcome");
-    const form = document.getElementById("chat-form");
-    const input = document.getElementById("chat-input");
-    const sendBtn = document.getElementById("send-btn");
+    /* ================================================================
+       FETCH WITH TIMEOUT (AbortController)
+    ================================================================ */
+    function fetchWithTimeout(url, ms) {
+      const ctrl  = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), ms);
+      return fetch(url, { signal: ctrl.signal })
+        .finally(() => clearTimeout(timer));
+    }
 
-    let history = [];
+    /* ================================================================
+       CALL BACKEND — via Vercel proxy (server-to-server, no CORS)
+    ================================================================ */
+    async function callBackend(message) {
+      const target = CHAT_API + encodeURIComponent(message);
 
+      const statusSteps = ["Waking up the AI professor...", "Searching the textbook...", "Still thinking...", "Almost there..."];
+      let step = 0;
+      const statusTimer = setInterval(() => {
+        step = Math.min(step + 1, statusSteps.length - 1);
+        setStatus(statusSteps[step]);
+      }, 15000);
+
+      try {
+        const r = await fetchWithTimeout(target, 180000);
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error || "request_failed");
+        return j.response;
+      } finally {
+        clearInterval(statusTimer);
+      }
+    }
+
+    /* ================================================================
+       RESPONSE PARSER
+       The Vercel proxy now returns clean AI text (no HTML wrapping).
+       This is just a safety net for edge cases.
+    ================================================================ */
+    function extractReply(raw) {
+      if (!raw || !raw.trim()) return null;
+
+      // Already clean text from Vercel proxy — return as-is
+      if (!raw.startsWith("{") && !raw.startsWith("<")) return raw.trim();
+
+      // Fallback: try to parse as JSON
+      try {
+        const d = JSON.parse(raw);
+        return d.response || d.reply || d.answer || d.message || d.text || raw.trim();
+      } catch {}
+
+      // Last resort: strip any HTML tags
+      return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    }
+
+    /* ================================================================
+       MARKDOWN RENDERER
+    ================================================================ */
     function renderMarkdown(text) {
       text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      text = text.replace(/\[Page\s*(\d+(?:[\s-]+\d+)?)\]/gi, m => `<span class="md-page">${m}</span>`);
+      text = text.replace(/\[Source:\s*([^\]]+)\]/gi, m => ` <span class="md-page">${m}</span>`);
 
-      text = text.replace(/\[Page\s*(\d+(?:[\s-]+\d+)?)\]/gi, (m, p) =>
-        `<span class="md-page">${m}</span>`
-      );
-
-      text = text.replace(/\[Source:\s*([^\]]+)\]/gi, (m, p) =>
-        ` <span class="md-page">${m}</span>`
-      );
-
-      const lines = text.split("\n").filter(l => l.trim() !== "" || l === "");
-
-      let html = "";
-      let i = 0;
+      const lines = text.split("\n");
+      let html = "", i = 0;
 
       while (i < lines.length) {
-        const line = lines[i];
-        const trimmed = line.trim();
-
-        if (trimmed.startsWith("### ")) {
-          html += `<div class="md-h3">${inlineMarkup(trimmed.slice(4))}</div>`;
-          i++;
-        }
-        else if (trimmed.startsWith("## ")) {
-          html += `<div class="md-h2">${inlineMarkup(trimmed.slice(3))}</div>`;
-          i++;
-        }
-        else if (trimmed === "---" || trimmed === "***") {
-          html += `<hr class="md-divider" />`;
-          i++;
-        }
-        else if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
-          let items = [];
-          while (i < lines.length) {
-            const t = lines[i].trim();
-            if (t.startsWith("- ") || t.startsWith("* ")) {
-              items.push(inlineMarkup(t.slice(2)));
-              i++;
-            } else break;
+        const t = lines[i].trim();
+        if (t.startsWith("### ")) { html += `<div class="md-h3">${inline(t.slice(4))}</div>`; i++; }
+        else if (t.startsWith("## "))  { html += `<div class="md-h2">${inline(t.slice(3))}</div>`; i++; }
+        else if (t === "---" || t === "***") { html += `<hr class="md-divider" />`; i++; }
+        else if (t.startsWith("- ") || t.startsWith("* ")) {
+          const items = [];
+          while (i < lines.length && (lines[i].trim().startsWith("- ") || lines[i].trim().startsWith("* "))) {
+            items.push(inline(lines[i].trim().slice(2))); i++;
           }
           html += `<ul class="md-list">${items.map(it => `<li>${it}</li>`).join("")}</ul>`;
         }
-        else if (/^\d+[.)]\s/.test(trimmed)) {
-          let items = [];
-          while (i < lines.length) {
-            const t = lines[i].trim();
-            if (/^\d+[.)]\s/.test(t)) {
-              items.push(inlineMarkup(t.replace(/^\d+[.)]\s/, "")));
-              i++;
-            } else break;
+        else if (/^\d+[.)]\s/.test(t)) {
+          const items = [];
+          while (i < lines.length && /^\d+[.)]\s/.test(lines[i].trim())) {
+            items.push(inline(lines[i].trim().replace(/^\d+[.)]\s/, ""))); i++;
           }
           html += `<ol class="md-ol">${items.map(it => `<li>${it}</li>`).join("")}</ol>`;
         }
-        else if (trimmed === "") {
-          i++;
-        }
-        else {
-          html += `<div class="md-p">${inlineMarkup(trimmed)}</div>`;
-          i++;
-        }
+        else if (t === "") { i++; }
+        else { html += `<div class="md-p">${inline(t)}</div>`; i++; }
       }
-
       return html;
     }
 
-    function inlineMarkup(text) {
+    function inline(text) {
       text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="md-strong">$1</strong>');
-      text = text.replace(/\*(.+?)\*/g, '<em class="md-em">$1</em>');
-      text = text.replace(/`([^`]+)`/g, '<code class="md-page">$1</code>');
-
-      const geologyTerms = /\b(igneous|sedimentary|metamorphic|magma|lava|erosion|weathering|fossil|mineral|crystal|tectonic|strata|sediment|mantle|crust|core|fault|fold|quake|magmatic|deposit|bedrock|ore|gem)\b/gi;
-      text = text.replace(geologyTerms, '<span class="md-highlight">$1</span>');
-
-      return text;
+      text = text.replace(/\*(.+?)\*/g,     '<em class="md-em">$1</em>');
+      text = text.replace(/`([^`]+)`/g,     '<code class="md-page">$1</code>');
+      const geo = /\b(igneous|sedimentary|metamorphic|magma|lava|erosion|weathering|fossil|mineral|crystal|tectonic|strata|sediment|mantle|crust|core|fault|fold|quake|magmatic|deposit|bedrock|ore|gem)\b/gi;
+      return text.replace(geo, '<span class="md-highlight">$1</span>');
     }
+
+    /* ================================================================
+       CHAT UI
+    ================================================================ */
+    const messagesEl = document.getElementById("messages");
+    const welcomeEl  = document.getElementById("welcome");
+    const form       = document.getElementById("chat-form");
+    const inputEl    = document.getElementById("chat-input");
+    const sendBtn    = document.getElementById("send-btn");
+    let history = [];
 
     function addMessage(role, text) {
       welcomeEl.style.display = "none";
-
-      const msgDiv = document.createElement("div");
-      msgDiv.className = `message ${role}`;
-
-      const imgSrc = "/hero.png";
-
+      const wrap   = document.createElement("div");
+      wrap.className = `message ${role}`;
       const avatar = document.createElement("div");
       avatar.className = "avatar";
-      avatar.innerHTML = `<img src="${imgSrc}" alt="" />`;
-
+      avatar.innerHTML = `<img src="/hero.png" alt="" />`;
       const bubble = document.createElement("div");
       bubble.className = "bubble";
-
-      if (role === "ai") {
-        bubble.innerHTML = renderMarkdown(text);
-      } else {
-        bubble.textContent = text;
-      }
-
-      msgDiv.appendChild(avatar);
-      msgDiv.appendChild(bubble);
-      messagesEl.appendChild(msgDiv);
+      if (role === "ai") bubble.innerHTML = renderMarkdown(text);
+      else bubble.textContent = text;
+      wrap.appendChild(avatar);
+      wrap.appendChild(bubble);
+      messagesEl.appendChild(wrap);
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
 
@@ -654,9 +605,8 @@
       const div = document.createElement("div");
       div.className = "message ai typing";
       div.id = "typing-indicator";
-      const imgSrc = "/hero.png";
       div.innerHTML = `
-        <div class="avatar"><img src="${imgSrc}" alt="" /></div>
+        <div class="avatar"><img src="/hero.png" alt="" /></div>
         <div class="bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
       `;
       messagesEl.appendChild(div);
@@ -668,9 +618,20 @@
       if (el) el.remove();
     }
 
+    function setStatus(text) {
+      const el = document.getElementById("typing-indicator");
+      if (!el) return;
+      const b = el.querySelector(".bubble");
+      if (b) b.innerHTML = `<span style="font-size:13px;color:#8B7D72;font-family:'Inter',sans-serif;">${text}</span>`;
+    }
+
+    /* ================================================================
+       SEND MESSAGE
+    ================================================================ */
     async function sendMessage(text) {
-      if (!text.trim()) return;
-      input.value = "";
+      text = text.trim();
+      if (!text) return;
+      inputEl.value = "";
       sendBtn.disabled = true;
 
       addMessage("user", text);
@@ -678,38 +639,27 @@
       showTyping();
 
       try {
-        const resp = await fetch(CHAT_API + encodeURIComponent(text));
-        const textResp = await resp.text();
-        let reply = "";
-        try {
-          const data = JSON.parse(textResp);
-          reply = data.response || data.reply || textResp;
-        } catch {
-          reply = textResp;
-        }
+        const raw   = await callBackend(text);
+        const reply = extractReply(raw);
         removeTyping();
-        addMessage("ai", reply || "Sorry, I couldn't process that.");
+        addMessage("ai", reply || "I got a response but couldn't read the answer. Please try again.");
         history.push({ role: "ai", content: reply || "" });
-      } catch (e) {
+      } catch {
         removeTyping();
-        addMessage("ai", "Connection error. The AI server may be waking up — please try again in a moment.");
+        addMessage("ai", "Could not reach the backend. Please try again in a moment.");
       } finally {
         sendBtn.disabled = false;
-        input.focus();
+        inputEl.focus();
       }
     }
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      sendMessage(input.value);
+    form.addEventListener("submit", e => { e.preventDefault(); sendMessage(inputEl.value); });
+    inputEl.addEventListener("keydown", e => {
+      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(inputEl.value); }
     });
 
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        sendMessage(input.value);
-      }
-    });
+    // Silently warm up the backend on page load
+    (async () => { try { await fetchWithTimeout(HEALTH_API, 30000); } catch {} })();
   </script>
 </body>
 </html>

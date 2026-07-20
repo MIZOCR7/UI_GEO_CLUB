@@ -4,8 +4,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Message parameter is required" });
   }
 
-  const STREAMLIT = "https://geoclub-backend.streamlit.app/";
-  const target = STREAMLIT + "?api=chat&message=" + encodeURIComponent(message);
+  const BACKEND = "https://geoclub-backend.streamlit.app/";
+  const target = BACKEND + "?api=chat&message=" + encodeURIComponent(message);
 
   let lastError = null;
 
@@ -25,7 +25,9 @@ export default async function handler(req, res) {
       lastError = error.message;
     }
 
-    if (attempt < 4) await new Promise(r => setTimeout(r, 5000 + attempt * 3000));
+    if (attempt < 4) {
+      await new Promise(r => setTimeout(r, 5000 + attempt * 3000));
+    }
   }
 
   return res.status(502).json({ error: lastError });

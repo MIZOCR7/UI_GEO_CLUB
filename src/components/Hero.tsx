@@ -1,11 +1,9 @@
 import { useEffect, useRef, useCallback } from "react";
 import CTAButton from "./CTAButton";
 
-interface Props { onChat: () => void }
-
 const SPOTLIGHT_RADIUS = 260;
 
-export default function Hero({ onChat }: Props) {
+export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: -999, y: -999 });
@@ -123,7 +121,7 @@ export default function Hero({ onChat }: Props) {
           <h1 className="text-[22px] md:text-[28px] font-medium leading-[120%] tracking-[-0.02em] text-[#2B1B10] max-w-[447px]">
             <WordReveal text="Explore the wonders of Geology — rocks, minerals, fossils & earth science." />
           </h1>
-          <CTAButton onChat={onChat} />
+          <CTAButton />
         </div>
       </div>
     </main>
